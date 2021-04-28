@@ -7,13 +7,13 @@ import FavoritesPage from './containers/Favorites';
 
 const App = props => {
   return (
-    <React.Fragment>
+    <>
       <Navigation />
       <main>
         <Route path="/" component={ProductsPage} exact />
         <Route path="/favorites" component={FavoritesPage} />
       </main>
-    </React.Fragment>
+    </>
   );
 };
 
