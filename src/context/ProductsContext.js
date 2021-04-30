@@ -34,8 +34,18 @@ export default ({ children }) => {
     ]
     );
 
+    const toggleFavorite = productId => {
+        setProducts(prevProducts => {
+            const productIndex = prevProducts.findIndex(product => product.id === productId);
+            const newFavState = !prevProducts[productIndex].isFavorite;
+            const updatedProducts = [...prevProducts];
+            updatedProducts[productIndex] = { ...updatedProducts[productIndex], isFavorite: newFavState };
+            return updatedProducts;
+        })
+    }
+
     return (
-        <ProductsContext.Provider value={{ products }}>
+        <ProductsContext.Provider value={{ products, toggleFavorite }}>
             {children}
         </ ProductsContext.Provider>
     );
