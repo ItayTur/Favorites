@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
 import { ProductsContext } from '../../context/ProductsContext';
-// import { useDispatch } from 'react-redux';
 
 import Card from '../UI/Card';
 import './ProductItem.css';
-// import { toggleFav } from '../../store/actions/products';
 
 const ProductItem = props => {
   const { toggleFavorite } = useContext(ProductsContext);
